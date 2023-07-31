@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fish
+  - Obstacle
+  - Feed
+  - Heart
   layers:
   - Default
   - TransparentFX

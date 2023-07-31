@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
     private float obstacleHeight;
 
 
+
     void Start()
     {
         obstacleHeight = GetComponent<CircleCollider2D>().radius * 2;

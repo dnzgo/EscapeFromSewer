@@ -73,4 +73,5 @@ public class FishController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
     }
+
 }

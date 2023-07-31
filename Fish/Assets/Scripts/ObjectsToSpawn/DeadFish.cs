@@ -14,7 +14,6 @@ public class DeadFish : MonoBehaviour
     private float obstacleWeight;
 
 
-
     void Start()
     {
         obstacleHeight = GetComponent<CapsuleCollider2D>().size.y;

@@ -10,6 +10,8 @@ public class Coke : MonoBehaviour
     private float obstacleHeight;
     private float angle;
 
+    
+
 
     void Start()
     {

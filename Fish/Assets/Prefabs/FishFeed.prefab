@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4369903502212053549}
   m_Layer: 0
   m_Name: FishFeed
-  m_TagString: Untagged
+  m_TagString: Feed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b2040bc088b4d9390ae084fe5e4cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 2.5
 --- !u!1 &7855620866097197186
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.65579164, b: 0, a: 1}
   m_FlipX: 0

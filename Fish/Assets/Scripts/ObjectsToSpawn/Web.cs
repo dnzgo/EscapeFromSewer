@@ -8,6 +8,7 @@ public class Web : MonoBehaviour
 
     private float obstacleHeight;
 
+    
 
     void Start()
     {
