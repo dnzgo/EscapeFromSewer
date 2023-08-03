@@ -37,7 +37,7 @@ public class DeadFish : MonoBehaviour
         angle += moveSpeed * rotationSpeed * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        if (transform.position.y < GameManager.bottomLeft.y - obstacleHeight)
+        if (transform.position.y < GameManager.bottomLeft.y - obstacleHeight || GameManager.isGameOver)
         {
             gameObject.SetActive(false);
         }

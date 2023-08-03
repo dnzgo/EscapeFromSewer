@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 9176508078478117109}
   m_Layer: 0
   m_Name: DeadFish
-  m_TagString: Obstacle
+  m_TagString: DeadFish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

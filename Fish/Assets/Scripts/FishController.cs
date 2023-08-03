@@ -7,6 +7,8 @@ public class FishController : MonoBehaviour
     [SerializeField] float xSpeed;
     [SerializeField] float maxAngle;
 
+    [SerializeField] Animator anim;
+
     float angle;
     float limitX;
     float fishXSize;
@@ -16,12 +18,20 @@ public class FishController : MonoBehaviour
         limitX = GameManager.bottomLeft.x;
         fishXSize = GetComponent<CapsuleCollider2D>().size.x;
         limitX += fishXSize / 2;
+
     }
 
     void Update()
     {
-        FishMovement();
-        FishRotation();
+        if (!GameManager.isGameOver)
+        {
+            FishMovement();
+            FishRotation();
+        }
+        else
+        {
+            anim.enabled = false;
+        }
     }
 
     void FishMovement()

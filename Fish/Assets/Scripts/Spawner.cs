@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnDelay)
+        if (timer >= spawnDelay && !GameManager.isGameOver)
         {
             GameObject obstacle = ObjectPool.instance.GetPooledObject();
             if (obstacle != null)

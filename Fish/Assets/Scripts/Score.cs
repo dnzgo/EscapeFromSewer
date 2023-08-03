@@ -14,11 +14,12 @@ public class Score : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.isGameOver)
+        {
+            score += Time.deltaTime * scoreMultiplier; // score increase by (seconds * multiplier)
 
-        score += Time.deltaTime * scoreMultiplier; // score increase by (seconds * multiplier)
-
-        scoreText.text = Mathf.FloorToInt(score).ToString() + "m";
-
+            scoreText.text = Mathf.FloorToInt(score).ToString() + "m";
+        }
     }
 
     private void OnDestroy()

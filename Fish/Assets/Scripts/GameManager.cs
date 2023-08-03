@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static Vector2 bottomLeft;
     public static float fishYPos = -2.0f;
 
+    public static bool isGameOver = false;
+
     private static int heart = 5;
     private static int feed = 0;
 
@@ -35,13 +37,22 @@ public class GameManager : MonoBehaviour
         heartText.text = " " + heart;
 
     }
-    public void LoseHeart()
+    public void LoseHeart(int amount)
     {
-        if (heart > 0)
+        if (heart >= amount)
         {
-            heart--;
+            heart -= amount;
+        }
+        else
+        {
+            heart = 0;
         }
         heartText.text = " " + heart;
+
+        if (heart < 1)
+        {
+            isGameOver = true;
+        }
 
     }
 

@@ -8,6 +8,10 @@ TagManager:
   - Obstacle
   - Feed
   - Heart
+  - Bomb
+  - Coke
+  - DeadFish
+  - Web
   layers:
   - Default
   - TransparentFX

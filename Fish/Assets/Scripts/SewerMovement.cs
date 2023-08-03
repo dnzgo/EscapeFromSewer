@@ -17,11 +17,15 @@ public class SewerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
-
-        if (transform.position.y <= -sewerHeight)
+        if (!GameManager.isGameOver)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 2 * sewerHeight);
+            transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
+
+            if (transform.position.y <= -sewerHeight)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y + 2 * sewerHeight);
+            }
         }
+        
     }
 }
