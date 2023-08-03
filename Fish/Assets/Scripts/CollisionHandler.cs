@@ -15,10 +15,12 @@ public class CollisionHandler : MonoBehaviour
         else if (collision.CompareTag("Feed"))
         {
             gameManager.Feed();
+            collision.gameObject.SetActive(false);
         }
         else if (collision.CompareTag("Heart"))
         {
             gameManager.GainHeart();
+            collision.gameObject.SetActive(false);
         }
     }
 }
