@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] private GameObject[] objectPrefabs;
+    [SerializeField] private GameObject[] obstaclePrefabs;
+    [SerializeField] private GameObject fishFeedPrefab;
+    [SerializeField] private GameObject heartPrefab;
 
     public static ObjectPool instance;
 
-    private List<GameObject> pooledObjects = new List<GameObject>();
+    private List<GameObject> pooledObstacle = new List<GameObject>();
+    private List<GameObject> pooledFishFeed = new List<GameObject>();
+    private GameObject pooledHeart;
 
-    private int randomObjectIndex;
+    private int randomObstacleIndex;
 
     private void Awake()
     {
@@ -22,30 +26,63 @@ public class ObjectPool : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < objectPrefabs.Length; i++)
+        for (int i = 0; i < obstaclePrefabs.Length; i++)
         {
-            for (int j = 0; j < i + 1; j++)
+            for (int j = 0; j < (i * 3 + 1); j++)
             {
-                GameObject obj = Instantiate(objectPrefabs[i]);
-                obj.SetActive(false);
-                pooledObjects.Add(obj);
+                GameObject obstacle = Instantiate(obstaclePrefabs[i]);
+                obstacle.SetActive(false);
+                pooledObstacle.Add(obstacle);
             }
         }
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject fishFeed = Instantiate(fishFeedPrefab);
+            fishFeed.SetActive(false);
+            pooledFishFeed.Add(fishFeed);
+        }
+
+        GameObject heart = Instantiate(heartPrefab);
+        heart.SetActive(false);
+        pooledHeart = heart;
 
     }
 
-    public GameObject GetPooledObject()
+    public GameObject GetPooledObstacle()
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        for (int i = 0; i < pooledObstacle.Count; i++)
         {
-            randomObjectIndex = Random.Range(0, pooledObjects.Count);
+            randomObstacleIndex = Random.Range(0, pooledObstacle.Count);
 
-            if (!pooledObjects[randomObjectIndex].activeInHierarchy)
+            if (!pooledObstacle[randomObstacleIndex].activeInHierarchy)
             {
-                return pooledObjects[randomObjectIndex];
+                return pooledObstacle[randomObstacleIndex];
             }
         }
 
         return null;
     }
+
+    public GameObject GetPooledFishFeed()
+    {
+        for (int i = 0; i < pooledFishFeed.Count; i++)
+        {
+            if (!pooledFishFeed[i].activeInHierarchy)
+            {
+                return pooledFishFeed[i];
+            }
+        }
+
+        return null;
+    }
+
+    public GameObject GetPooledHeart()
+    {
+        if (!pooledHeart.activeInHierarchy)
+        {
+            return pooledHeart;
+        }
+        return null;
+    }
+
 }

@@ -20,7 +20,7 @@ public class FishFeed : MonoBehaviour
         float posY = transform.position.y - moveSpeed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x, posY);
 
-        if (transform.position.y < GameManager.bottomLeft.y - obstacleHeight)
+        if (transform.position.y < GameManager.bottomLeft.y - obstacleHeight || GameManager.isGameOver)
         {
             gameObject.SetActive(false);
         }

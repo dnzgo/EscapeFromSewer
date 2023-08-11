@@ -8,23 +8,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Coke"))
-        {
-            gameManager.LoseHeart(1);
-        }
-        else if (collision.CompareTag("DeadFish"))
-        {
-            gameManager.LoseHeart(2);
-        }
-        else if (collision.CompareTag("Bomb"))
-        {
-            gameManager.LoseHeart(4);
-        }
-        else if (collision.CompareTag("Web"))
-        {
-            gameManager.LoseHeart(3);
-        }
-        else if (collision.CompareTag("Feed"))
+        
+        if (collision.CompareTag("Feed"))
         {
             gameManager.Feed();
             collision.gameObject.SetActive(false);
@@ -33,6 +18,25 @@ public class CollisionHandler : MonoBehaviour
         {
             gameManager.GainHeart();
             collision.gameObject.SetActive(false);
+        }
+        else
+        {                                      //Anim eklenecek çarpışma sesi eklenecek
+            if (collision.CompareTag("Coke"))
+            {
+                gameManager.LoseHeart(1);
+            }
+            else if (collision.CompareTag("DeadFish"))
+            {
+                gameManager.LoseHeart(2);
+            }
+            else if (collision.CompareTag("Bomb"))
+            {
+                gameManager.LoseHeart(4);
+            }
+            else if (collision.CompareTag("Web"))
+            {
+                gameManager.LoseHeart(3);
+            }
         }
     }
 }

@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameOver = false;
 
-    private static int heart = 5;
+    public static int heart = 5;
+
     private static int feed = 0;
 
     private void Awake()
